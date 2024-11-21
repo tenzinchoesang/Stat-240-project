@@ -1,0 +1,17 @@
+```{r}
+library(tidyverse)
+nycarrests <- read_csv("../data/NYPD_Arrest_Data__Year_to_Date__20241118.csv")
+view(nycarrests)
+```
+
+
+```{r}
+nycarrests %>% 
+ggplot(aes(x = AGE_GROUP, fill = AGE_GROUP)) +
+  geom_bar() +
+  xlab("") +
+  ylab("# of arrests") +
+  ggtitle("ages of arrest in each borough") +
+  facet_wrap(~ARREST_BORO)
+```
+
